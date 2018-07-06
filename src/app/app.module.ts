@@ -15,14 +15,12 @@ import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.com
 import { WelcomeComponent } from './welcome/welcome.component';
 import { HeaderComponent } from './navigation/header/header.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     SidenavListComponent,
     WelcomeComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
