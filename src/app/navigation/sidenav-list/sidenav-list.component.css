@@ -8,6 +8,7 @@ a:active {
   color: lightgray;
 }
 
-i {
+i, mat-icon {
   font-size: 24px;
+  margin-right: 7px;
 }
