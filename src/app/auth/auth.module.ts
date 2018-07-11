@@ -12,7 +12,7 @@ import { CpfDirective } from '../directive/cpf.directive';
   imports: [
     AuthRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [LoginComponent, CpfDirective]
 })

@@ -1,0 +1,26 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="newVehicleForm"
+    (ngSubmit)="onSubmit()">
+
+    <mat-card>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Número do Carro"
+            formControlName="numberCar">
+          <mat-hint>Número do Carro</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="newVehicleForm.invalid">Submit</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </form>
+</section>

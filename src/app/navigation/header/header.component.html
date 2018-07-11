@@ -6,13 +6,14 @@
         <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div><a routerLink="/"><img src="../../../assets/logo-v2-pneu.png" fxLayoutAlign="center center"></a></div>
+  <div fxFlex fxLayout fxLayoutAlign.xs="flex-end"><a routerLink="/"><img src="../../../assets/logo-branco-movmax.png" fxLayoutAlign="center center"></a></div>
   <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
     <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-      <li><a>Signup</a></li>
-      <li><a routerLink="/login">Login</a></li>
-      <li><a>Training</a></li>
-      <li><a style="cursor: pointer;">Logout</a></li>
+      <!-- <a><a>Signup</a></a> -->
+      <!-- <li><a routerLink="/login">Login</a></li> -->
+      <li><a routerLink="/pneu">Pneu</a></li>
+      <li><a routerLink="/vehicle">Veículo</a></li>
+      <!-- <li><a style="cursor: pointer;">Logout</a></li> -->
     </ul>
   </div>
 </mat-toolbar>

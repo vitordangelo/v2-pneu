@@ -31,7 +31,7 @@ import { HeaderComponent } from './navigation/header/header.component';
     AuthModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

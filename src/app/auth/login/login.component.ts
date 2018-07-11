@@ -24,6 +24,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    this.isLoading = true;
+    console.log(this.loginForm.value);
   }
 }

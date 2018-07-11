@@ -1,0 +1,98 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="newPneuForm"
+    (ngSubmit)="onSubmit()">
+
+    <mat-card>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Dimensão"
+            formControlName="dimension">
+          <mat-hint>Dimensão do pneu</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Marca"
+            formControlName="brand">
+          <mat-hint>Marca do pneu</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="PR"
+            formControlName="pr">
+          <mat-hint>PR</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Tipo"
+            formControlName="type">
+          <mat-hint>Tipo</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Número a Fogo"
+            formControlName="numberFire">
+          <mat-hint>Número a Fogo</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input
+            type="text"
+            matInput
+            placeholder="Matrícula"
+            formControlName="registration">
+          <mat-hint>Matrícula</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div fxLayout="column" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-checkbox
+          (change)="newBoxClicked()"
+          formControlName="new"
+          class="example-margin"
+          color="primary"
+          style="width: 100%">
+          Novo
+        </mat-checkbox>
+
+        <mat-checkbox
+          (change)="recachutadoClicked()"
+          formControlName="recachutado"
+          class="example-margin"
+          color="primary"
+          style="width: 100%">
+          Recachutado
+        </mat-checkbox>
+      </div>
+
+    </mat-card>
+
+    <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="newPneuForm.invalid">Submit</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </form>
+</section>
