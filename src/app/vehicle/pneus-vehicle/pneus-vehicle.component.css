@@ -1,0 +1,10 @@
+mat-card {
+  margin-top: 15px;
+  background: rgba(0,0,0,.06);
+}
+
+.new-training {
+  background-image: url('../../../assets/bus.png');
+  background-position: top 5px left 200px;
+  background-repeat: no-repeat;
+}
