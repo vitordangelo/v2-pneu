@@ -1,0 +1,66 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+    <form
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+      [formGroup]="pneusVehicle"
+      (ngSubmit)="onSubmit()">
+
+      <mat-card>
+        <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+          <mat-form-field fxFlex.gt-xs="800px">
+            <input
+              type="text"
+              matInput
+              placeholder="Número do Carro"
+              formControlName="exitedEd">
+            <mat-hint>Número do Carro</mat-hint>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card>
+      <mat-card>
+        <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+          <mat-form-field fxFlex.md="400">
+            <input
+              type="text"
+              matInput
+              placeholder="Número do Carro"
+              formControlName="exitedEd">
+            <mat-hint>Número do Carro</mat-hint>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex.md="400">
+            <input
+              type="text"
+              matInput
+              placeholder="Número do Carro"
+              formControlName="exitedEd">
+            <mat-hint>Número do Carro</mat-hint>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex.md="400">
+            <input
+              type="text"
+              matInput
+              placeholder="Número do Carro"
+              formControlName="exitedEd">
+            <mat-hint>Número do Carro</mat-hint>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex.md="400">
+            <input
+              type="text"
+              matInput
+              placeholder="Número do Carro"
+              formControlName="exitedEd">
+            <mat-hint>Número do Carro</mat-hint>
+            <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card>
+
+      <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="pneusVehicle.invalid">Submit</button>
+      <mat-spinner *ngIf="isLoading"></mat-spinner>
+    </form>
+  </section>

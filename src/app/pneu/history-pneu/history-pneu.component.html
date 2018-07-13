@@ -1,0 +1,147 @@
+<section class="new-training" fxLayout fxLayoutAlign="center">
+  <form
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    fxLayoutGap="10px"
+    [formGroup]="historyPneuForm"
+    (ngSubmit)="onSubmit()">
+
+    <mat-card>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field fxFlex.gt-xs="800px">
+          <mat-select placeholder="Selecione o Pneu" formControlName="pneu">
+            <mat-option [value]="1">
+              1526 - PneuStore
+            </mat-option>
+            <mat-option [value]="1">
+              2569 - Firestone
+            </mat-option>
+            <mat-option [value]="1">
+              4400 - Pirelli
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field fxFlex.gt-xs="calc(800px/4)">
+          <mat-select placeholder="Selecione o Veículo" formControlName="vehicle">
+            <mat-option [value]="1">
+              5852
+            </mat-option>
+            <mat-option [value]="1">
+              1100
+            </mat-option>
+            <mat-option [value]="1">
+              2255
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(800px/4)">
+          <mat-select placeholder="Posição" formControlName="position">
+            <mat-option [value]="1">
+              Direito
+            </mat-option>
+            <mat-option [value]="1">
+              Esquerdo
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(800px/4)">
+          <input
+            type="text"
+            matInput
+            placeholder="Km Percorridos"
+            formControlName="distance">
+          <mat-hint>Km Percorridos</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(800px/4)">
+          <input
+            type="text"
+            matInput
+            placeholder="Recapagem"
+            formControlName="recapagem">
+          <mat-hint>Recapagem</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h4>Montagem</h4></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+          <mat-form-field fxFlex.gt-xs="calc(800px/2)">
+            <input
+              type="text"
+              matInput
+              placeholder="Odômetro"
+              formControlName="odometerInstallation">
+              <mat-hint>Odômetro</mat-hint>
+              <mat-error>Campo Obrigatório</mat-error>
+          </mat-form-field>
+          <mat-form-field fxFlex.gt-xs="calc(800px/2)" class="ajuste-select">
+            <input matInput [matDatepicker]="picker1" placeholder="Data">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker1></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title><h4>Retirada</h4></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+          <mat-form-field fxFlex.gt-xs="calc(800px/2)">
+            <input
+              type="text"
+              matInput
+              placeholder="Odômetro"
+              formControlName="odometerUninstall">
+              <mat-hint>Odômetro</mat-hint>
+              <mat-error>Campo Obrigatório</mat-error>
+            </mat-form-field>
+            <mat-form-field fxFlex.gt-xs="calc(800px/2)" class="ajuste-select">
+              <input matInput [matDatepicker]="picker" placeholder="Data">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker touchUi #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field fxFlex.gt-xs="calc(800px/2)">
+          <input
+            type="text"
+            matInput
+            placeholder="Causa da Retirada"
+            formControlName="cause">
+          <mat-hint>Causa da Retirada</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(800px/2)">
+          <input
+            type="text"
+            matInput
+            placeholder="Observação"
+            formControlName="obs">
+          <mat-hint>Observação</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="historyPneuForm.invalid">Submit</button>
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+  </form>
+</section>

@@ -10,3 +10,7 @@ html, body {
 body {
   margin: 0;
 }
+
+section {
+  margin-bottom: 25px;
+}
