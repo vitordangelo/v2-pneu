@@ -1,3 +1,26 @@
 .filter {
   margin-top: 15px;
 }
+
+mat-spinner {
+  margin-top: 15px;
+}
+
+.status-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin: 2px;
+}
+
+.new {
+  background-color: rgb(76, 175, 80);
+}
+
+.recachutado {
+  background-color: rgba(15, 86, 119, 0.548);
+}
+
+.hide {
+  display: none;
+}

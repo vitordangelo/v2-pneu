@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { VehicleService } from './../../services/vehicle.service';
+import { UiService } from '../../services/ui.service';
+
 @Component({
   selector: 'app-new-vehicle',
   templateUrl: './new-vehicle.component.html',
@@ -10,11 +13,14 @@ export class NewVehicleComponent implements OnInit {
   newVehicleForm: FormGroup;
   isLoading = false;
 
-  constructor() { }
+  constructor(
+    private vehicleService: VehicleService,
+    private uiService: UiService
+  ) { }
 
   ngOnInit() {
     this.newVehicleForm = new FormGroup({
-      numberCar: new FormControl('', {
+      number_car: new FormControl('', {
         validators: [Validators.required]
       })
     });
@@ -22,6 +28,15 @@ export class NewVehicleComponent implements OnInit {
 
   onSubmit() {
     console.log(this.newVehicleForm.value);
+    this.vehicleService.save(this.newVehicleForm.value)
+      .subscribe(res => {
+        console.log(res);
+        this.uiService.showSnackBar('Veículo cadastrado com sucesso!', 5000);
+        this.newVehicleForm.reset();
+      }, error => {
+        console.log(error);
+        this.uiService.showSnackBar('Erro durante o cadastro, tente novamente mais tarde!', 3000);
+      });
   }
 
 }

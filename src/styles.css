@@ -14,3 +14,8 @@ body {
 section {
   margin-bottom: 25px;
 }
+
+.snack-bar {
+  color: #FFF;
+  background-color: #434CB5;
+}
