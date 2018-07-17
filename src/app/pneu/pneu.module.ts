@@ -5,6 +5,7 @@ import { PneuRoutingModule } from './pneu-routing.module';
 import { NewPneuComponent } from './new-pneu/new-pneu.component';
 import { SharedModule } from '../shared/shared.module';
 import { HistoryPneuComponent } from './history-pneu/history-pneu.component';
+import { ListPneusComponent } from './list-pneus/list-pneus.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { HistoryPneuComponent } from './history-pneu/history-pneu.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [NewPneuComponent, HistoryPneuComponent]
+  declarations: [NewPneuComponent, HistoryPneuComponent, ListPneusComponent]
 })
 export class PneuModule { }

@@ -6,12 +6,14 @@
         <mat-icon>menu</mat-icon>
     </button>
   </div>
-  <div fxFlex fxLayout fxLayoutAlign.xs="flex-end"><a routerLink="/"><img src="../../../assets/logo-branco-movmax.png" fxLayoutAlign="center center"></a></div>
-  <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-    <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+  <div fxFlex="110px" fxLayout fxLayoutAlign.xs="flex-end"><a routerLink="/"><img src="../../../assets/logo-branco-movmax.png" fxLayoutAlign="center center"></a></div>
+  <!-- <div fxFlex fxLayout fxLayoutAlign="center center" fxHide.xs> -->
+  <div fxFlex fxLayout="row" fxHide.xs fxLayoutAlign="center center">
+    <ul fxLayout fxLayoutGap="50px" class="navigation-items">
       <!-- <a><a>Signup</a></a> -->
       <!-- <li><a routerLink="/login">Login</a></li> -->
       <li><a routerLink="/pneu">Pneu</a></li>
+      <li><a routerLink="/pneu/list">Pneus</a></li>
       <li><a routerLink="/pneu/history">Histórico do Pneu</a></li>
       <li><a routerLink="/vehicle">Veículo</a></li>
       <li><a routerLink="/vehicle/pneus">Pneus no Veículo</a></li>
