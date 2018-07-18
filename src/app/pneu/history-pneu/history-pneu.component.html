@@ -10,14 +10,8 @@
       <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
         <mat-form-field fxFlex.gt-xs="800px">
           <mat-select placeholder="Selecione o Pneu" formControlName="pneu">
-            <mat-option [value]="1">
-              1526 - PneuStore
-            </mat-option>
-            <mat-option [value]="1">
-              2569 - Firestone
-            </mat-option>
-            <mat-option [value]="1">
-              4400 - Pirelli
+            <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+              {{ pneu.registry }} - {{ pneu.brand }}
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -28,14 +22,8 @@
       <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
         <mat-form-field fxFlex.gt-xs="calc(800px/4)">
           <mat-select placeholder="Selecione o Veículo" formControlName="vehicle">
-            <mat-option [value]="1">
-              5852
-            </mat-option>
-            <mat-option [value]="1">
-              1100
-            </mat-option>
-            <mat-option [value]="1">
-              2255
+            <mat-option [value]="1" *ngFor="let vehicle of vehicles">
+              {{ vehicle.number_car }}
             </mat-option>
           </mat-select>
         </mat-form-field>

@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { PneuService } from './../../services/pneu.service';
+import { VehicleService } from './../../services/vehicle.service';
+
+import { Pneu } from './../../modules/pneu';
+import { Vehicle } from './../../modules/vehicle';
+
 @Component({
   selector: 'app-history-pneu',
   templateUrl: './history-pneu.component.html',
@@ -9,8 +15,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class HistoryPneuComponent implements OnInit {
   historyPneuForm: FormGroup;
   isLoading = false;
+  pneus: Pneu[];
+  vehicles: Vehicle[];
 
-  constructor() { }
+  constructor(
+    private pneuService: PneuService,
+    private vehicleService: VehicleService,
+  ) { }
 
   ngOnInit() {
     this.historyPneuForm = new FormGroup({
@@ -42,6 +53,19 @@ export class HistoryPneuComponent implements OnInit {
         validators: [Validators.required]
       }),
     });
+
+    this.isLoading = true;
+    this.pneuService.all()
+      .subscribe((pneus: any) => {
+        this.pneus = pneus.pneus;
+        this.isLoading = false;
+      });
+
+    this.vehicleService.all()
+      .subscribe((vehicles: any) => {
+        this.vehicles = vehicles.vehicles;
+        this.isLoading = false;
+      });
   }
 
   onSubmit() {
