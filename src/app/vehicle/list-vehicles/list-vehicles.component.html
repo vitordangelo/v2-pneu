@@ -1,0 +1,28 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <mat-spinner fxLayoutAlign="center center" *ngIf="isLoading"></mat-spinner>
+</div>
+
+<div fxLayoutAlign="center center" class="fiter">
+  <mat-form-field fxFlex="40%">
+    <input
+      matInput
+      type="text"
+      (keyup)="doFilter($event.target.value)"
+      placeholder="Filter">
+  </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+  <ng-container matColumnDef="number_car">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Número do Veículo</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.number_car }}</mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+<mat-paginator
+  #paginator
+  [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 50, 100]">
+</mat-paginator>

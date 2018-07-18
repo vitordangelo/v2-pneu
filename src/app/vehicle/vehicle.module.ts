@@ -5,6 +5,7 @@ import { VehicleRoutingModule } from './vehicle-routing.module';
 import { NewVehicleComponent } from './new-vehicle/new-vehicle.component';
 import { SharedModule } from '../shared/shared.module';
 import { PneusVehicleComponent } from './pneus-vehicle/pneus-vehicle.component';
+import { ListVehiclesComponent } from './list-vehicles/list-vehicles.component';
 
 @NgModule({
   imports: [
@@ -12,6 +13,6 @@ import { PneusVehicleComponent } from './pneus-vehicle/pneus-vehicle.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [NewVehicleComponent, PneusVehicleComponent]
+  declarations: [NewVehicleComponent, PneusVehicleComponent, ListVehiclesComponent]
 })
 export class VehicleModule { }
