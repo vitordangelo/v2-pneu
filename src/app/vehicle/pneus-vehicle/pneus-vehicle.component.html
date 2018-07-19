@@ -9,13 +9,11 @@
       <mat-card>
         <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
           <mat-form-field fxFlex.gt-xs="860px">
-            <input
-              type="text"
-              matInput
-              placeholder="Número do Carro"
-              formControlName="exitedEd">
-            <mat-hint>Número do Carro</mat-hint>
-            <mat-error>Campo Obrigatório</mat-error>
+            <mat-select placeholder="Veículo" formControlName="vehicle">
+              <mat-option [value]="vehicle.id" *ngFor="let vehicle of vehicles">
+                {{ vehicle.number_car }}
+              </mat-option>
+            </mat-select>
           </mat-form-field>
         </div>
       </mat-card>
@@ -24,22 +22,18 @@
         <mat-card>
           <div fxLayout="row" fxFlex.gt-xs="860px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Esquerda"
-                formControlName="exitedEd">
-              <mat-hint>Eixo Dianteiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Eixo Dianteiro Esquerdo" formControlName="eixoDianteiroEsquerdo">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Direita"
-                formControlName="exitedEd">
-              <mat-hint>Eixo Dianteiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Eixo Dianteiro Direito" formControlName="eixoDianteiroDireito">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card>
@@ -49,22 +43,18 @@
         <mat-card>
           <div fxLayout="row" fxFlex.gt-xs="400px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Esquerdo Externo"
-                formControlName="exitedEd">
-              <mat-hint>1º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Esquerdo Externo" formControlName="primeiroEsquerdoExterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Esquerdo Interno"
-                formControlName="exitedEd">
-              <mat-hint>1º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Esquerdo Interno" formControlName="primeiroEsquerdoInterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card>
@@ -72,22 +62,18 @@
         <mat-card>
           <div fxLayout="row" fxFlex.gt-xs="400px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Direito Interno"
-                formControlName="exitedEd">
-              <mat-hint>1º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Direito Interno" formControlName="primeiroDireitoInterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Direito Externo"
-                formControlName="exitedEd">
-              <mat-hint>1º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Direito Externo" formControlName="primeiroDireitoExterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card>
@@ -97,22 +83,18 @@
         <mat-card>
           <div fxLayout="row" fxFlex.gt-xs="400px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Esquerdo Externo"
-                formControlName="exitedEd">
-              <mat-hint>2º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Esquerdo Externo" formControlName="segundoEsquerdoExterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Esquerdo Interno"
-                formControlName="exitedEd">
-              <mat-hint>2º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Esquerdo Interno" formControlName="segundoEsquerdoInterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card>
@@ -120,22 +102,18 @@
         <mat-card>
           <div fxLayout="row" fxFlex.gt-xs="400px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Direito Interno"
-                formControlName="exitedEd">
-              <mat-hint>2º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Direito Interno" formControlName="sedundoDireitoInterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
             <mat-form-field fxFlex.md="400">
-              <input
-                type="text"
-                matInput
-                placeholder="Direito Externo"
-                formControlName="exitedEd">
-              <mat-hint>2º Eixo Traseiro</mat-hint>
-              <mat-error>Campo Obrigatório</mat-error>
+              <mat-select placeholder="Direito Externo" formControlName="segundoDireitoExterno">
+                <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
+                  {{ pneu.registry }} - {{ pneu.brand }}
+                </mat-option>
+              </mat-select>
             </mat-form-field>
           </div>
         </mat-card>
