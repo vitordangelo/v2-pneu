@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { PneuService } from './../../services/pneu.service';
 import { VehicleService } from '../../services/vehicle.service';
+import { PneusVehicleService } from '../../services/pneus-vehicle.service';
+import { UiService } from '../../services/ui.service';
 
 import { Pneu } from '../../modules/pneu';
 import { Vehicle } from './../../modules/vehicle';
@@ -13,18 +15,20 @@ import { Vehicle } from './../../modules/vehicle';
   styleUrls: ['./pneus-vehicle.component.css']
 })
 export class PneusVehicleComponent implements OnInit {
-  pneusVehicle: FormGroup;
+  pneusVehicleForm: FormGroup;
   isLoading = false;
   pneus: Pneu[];
   vehicles: Vehicle[];
 
   constructor(
     private pneuService: PneuService,
-    private vehicleSerive: VehicleService
+    private vehicleService: VehicleService,
+    private pneusVehicleService: PneusVehicleService,
+    private uiService: UiService
   ) { }
 
   ngOnInit() {
-    this.pneusVehicle = new FormGroup({
+    this.pneusVehicleForm = new FormGroup({
       vehicle: new FormControl('', {
         validators: [Validators.required]
       }),
@@ -68,14 +72,23 @@ export class PneusVehicleComponent implements OnInit {
         this.isLoading = false;
       });
 
-    this.vehicleSerive.all()
+    this.vehicleService.all()
       .subscribe((vehicles: any) => {
         this.vehicles = vehicles.vehicles;
       });
   }
 
   onSubmit() {
-    console.log(this.pneusVehicle.value);
+    this.isLoading = true;
+    console.log(this.pneusVehicleForm.value);
+    this.pneusVehicleService.save(this.pneusVehicleForm.value)
+      .subscribe( res => {
+        this.uiService.showSnackBar('Dados gravados com sucesso!', 3000);
+        console.log(res);
+        this.isLoading = false;
+      }, error => {
+        this.uiService.showSnackBar('Erro, tente novamente mais tarde!', 3000);
+      });
   }
 
 }

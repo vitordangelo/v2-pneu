@@ -19,3 +19,7 @@ section {
   color: #FFF;
   background-color: #434CB5;
 }
+
+.mat-row:hover {
+  background-color:#cecece38;
+}

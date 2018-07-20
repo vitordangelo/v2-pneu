@@ -8,3 +8,7 @@ mat-card {
   background-position: top 5px left 200px;
   background-repeat: no-repeat;
 }
+
+button, mat-spinner {
+  margin-bottom: 130px;
+}
