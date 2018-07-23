@@ -13,6 +13,7 @@ import { ListVehiclesComponent } from './list-vehicles/list-vehicles.component';
     ReactiveFormsModule,
     SharedModule
   ],
-  declarations: [NewVehicleComponent, PneusVehicleComponent, ListVehiclesComponent]
+  declarations: [NewVehicleComponent, PneusVehicleComponent, ListVehiclesComponent],
+  exports: [ListVehiclesComponent]
 })
 export class VehicleModule { }

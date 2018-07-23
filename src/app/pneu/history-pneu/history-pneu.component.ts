@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { PneuService } from './../../services/pneu.service';
 import { VehicleService } from './../../services/vehicle.service';
+import { HistoryPneusService } from '../../services/history_pneus.service';
+import { UiService } from './../../services/ui.service';
 
 import { Pneu } from './../../modules/pneu';
 import { Vehicle } from './../../modules/vehicle';
@@ -21,32 +23,34 @@ export class HistoryPneuComponent implements OnInit {
   constructor(
     private pneuService: PneuService,
     private vehicleService: VehicleService,
+    private historyPneusService: HistoryPneusService,
+    private uiSerice: UiService,
   ) { }
 
   ngOnInit() {
     this.historyPneuForm = new FormGroup({
-      pneu: new FormControl('', {
+      pneu_id: new FormControl('', {
         validators: [Validators.required]
       }),
       position: new FormControl('', {
         validators: [Validators.required]
       }),
-      vehicle: new FormControl('', {
+      vehicle_id: new FormControl('', {
         validators: [Validators.required]
       }),
-      odometerInstallation: new FormControl('', {
+      odometerInstalled: new FormControl('', {
         validators: [Validators.required]
       }),
-      odometerUninstall: new FormControl('', {
+      odometerUninstalled: new FormControl('', {
         validators: [Validators.required]
       }),
-      distance: new FormControl('', {
+      km_distance: new FormControl('', {
         validators: [Validators.required]
       }),
       recapagem: new FormControl('', {
         validators: [Validators.required]
       }),
-      cause: new FormControl('', {
+      note: new FormControl('', {
         validators: [Validators.required]
       }),
       obs: new FormControl('', {
@@ -70,6 +74,12 @@ export class HistoryPneuComponent implements OnInit {
 
   onSubmit() {
     console.log(this.historyPneuForm.value);
+    this.historyPneusService.save(this.historyPneuForm.value)
+      .subscribe(res => {
+        this.uiSerice.showSnackBar('Histórico realizado com sucesso!', 3000);
+      }, error => {
+        this.uiSerice.showSnackBar('Falha ao cadastrar histórico. Tente novamente!', 3000);
+      });
   }
 
 }

@@ -12,6 +12,7 @@
   </mat-form-field>
 </div>
 
+<div class="example-container mat-elevation-z8">
 <mat-table [dataSource]="dataSource" matSort>
   <ng-container matColumnDef="dimension">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Dimensão</mat-header-cell>
@@ -60,6 +61,7 @@
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
+</div>
 
 <mat-paginator
   #paginator

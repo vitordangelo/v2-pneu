@@ -9,7 +9,7 @@
     <mat-card>
       <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
         <mat-form-field fxFlex.gt-xs="800px">
-          <mat-select placeholder="Selecione o Pneu" formControlName="pneu">
+          <mat-select placeholder="Selecione o Pneu" formControlName="pneu_id">
             <mat-option [value]="pneu.id" *ngFor="let pneu of pneus">
               {{ pneu.registry }} - {{ pneu.brand }}
             </mat-option>
@@ -21,18 +21,18 @@
     <mat-card>
       <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
         <mat-form-field fxFlex.gt-xs="calc(800px/4)">
-          <mat-select placeholder="Selecione o Veículo" formControlName="vehicle">
-            <mat-option [value]="1" *ngFor="let vehicle of vehicles">
+          <mat-select placeholder="Selecione o Veículo" formControlName="vehicle_id">
+            <mat-option [value]="vehicle.id" *ngFor="let vehicle of vehicles">
               {{ vehicle.number_car }}
             </mat-option>
           </mat-select>
         </mat-form-field>
         <mat-form-field fxFlex.gt-xs="calc(800px/4)">
           <mat-select placeholder="Posição" formControlName="position">
-            <mat-option [value]="1">
+            <mat-option value="Direito">
               Direito
             </mat-option>
-            <mat-option [value]="1">
+            <mat-option value="Esquerdo">
               Esquerdo
             </mat-option>
           </mat-select>
@@ -42,7 +42,7 @@
             type="text"
             matInput
             placeholder="Km Percorridos"
-            formControlName="distance">
+            formControlName="km_distance">
           <mat-hint>Km Percorridos</mat-hint>
           <mat-error>Campo Obrigatório</mat-error>
         </mat-form-field>
@@ -69,7 +69,7 @@
               type="text"
               matInput
               placeholder="Odômetro"
-              formControlName="odometerInstallation">
+              formControlName="odometerInstalled">
               <mat-hint>Odômetro</mat-hint>
               <mat-error>Campo Obrigatório</mat-error>
           </mat-form-field>
@@ -93,7 +93,7 @@
               type="text"
               matInput
               placeholder="Odômetro"
-              formControlName="odometerUninstall">
+              formControlName="odometerUninstalled">
               <mat-hint>Odômetro</mat-hint>
               <mat-error>Campo Obrigatório</mat-error>
             </mat-form-field>
@@ -113,7 +113,7 @@
             type="text"
             matInput
             placeholder="Causa da Retirada"
-            formControlName="cause">
+            formControlName="note">
           <mat-hint>Causa da Retirada</mat-hint>
           <mat-error>Campo Obrigatório</mat-error>
         </mat-form-field>

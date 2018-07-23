@@ -18,7 +18,7 @@ export class PneusVehicleService {
   }
 
   save(pneusVehicle: PneusVehicle): Observable<PneusVehicle> {
-    return this.httpClient.post<PneusVehicle>(`${environment.apiUrl}vehicle`, pneusVehicle);
+    return this.httpClient.post<PneusVehicle>(`${environment.apiUrl}pneus-in-vehicle`, pneusVehicle);
   }
 
   del(id: number): Observable<{}> {

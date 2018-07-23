@@ -7,11 +7,14 @@ import { SharedModule } from '../shared/shared.module';
 import { HistoryPneuComponent } from './history-pneu/history-pneu.component';
 import { ListPneusComponent } from './list-pneus/list-pneus.component';
 
+import { VehicleModule } from '../vehicle/vehicle.module';
+
 @NgModule({
   imports: [
     PneuRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    VehicleModule
   ],
   declarations: [NewPneuComponent, HistoryPneuComponent, ListPneusComponent]
 })

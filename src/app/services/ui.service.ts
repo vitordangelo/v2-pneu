@@ -11,7 +11,7 @@ export class UiService {
     private snackBar: MatSnackBar
   ) { }
 
-  showSnackBar(message, duration) {
+  showSnackBar(message: string, duration: number) {
     this.snackBar.open(message, null, {
       duration: duration,
       horizontalPosition: 'right',
