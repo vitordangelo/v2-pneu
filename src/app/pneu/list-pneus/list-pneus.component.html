@@ -47,14 +47,14 @@
   <ng-container matColumnDef="new">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Novo</mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <div class="status-indicator" [ngClass]="element.recachutado ? 'new' : 'hide'"></div>
+      <div class="status-indicator" [ngClass]="element.recachutado ? 'hide' : 'new'"></div>
     </mat-cell>
   </ng-container>
 
   <ng-container matColumnDef="recachutado">
     <mat-header-cell *matHeaderCellDef mat-sort-header>Recachutado</mat-header-cell>
     <mat-cell *matCellDef="let element">
-      <div class="status-indicator" [ngClass]="element.recachutado ? 'hide' : 'recachutado'"></div>
+      <div class="status-indicator" [ngClass]="element.recachutado ? 'recachutado' : 'hide'"></div>
     </mat-cell>
   </ng-container>
 

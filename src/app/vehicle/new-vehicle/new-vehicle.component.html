@@ -8,13 +8,54 @@
 
     <mat-card>
       <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
-        <mat-form-field fxFlex.gt-xs="860px">
+        <mat-form-field fxFlex.gt-xs="calc(870px/2)">
           <input
             type="text"
             matInput
             placeholder="Número do Carro"
             formControlName="number_car">
           <mat-hint>Número do Carro</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(870px/2)">
+          <input
+            type="text"
+            matInput
+            placeholder="Placa"
+            formControlName="number_car">
+          <mat-hint>Placa</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
+        <mat-form-field fxFlex.gt-xs="calc(860px/3)">
+          <input
+            type="text"
+            matInput
+            placeholder="Ano"
+            formControlName="number_car">
+          <mat-hint>Ano</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(860px/3)">
+          <input
+            type="text"
+            matInput
+            placeholder="Marca"
+            formControlName="number_car">
+          <mat-hint>Placa</mat-hint>
+          <mat-error>Campo Obrigatório</mat-error>
+        </mat-form-field>
+        <mat-form-field fxFlex.gt-xs="calc(860px/3)">
+          <input
+            type="text"
+            matInput
+            placeholder="Tipo"
+            formControlName="number_car">
+          <mat-hint>Tipo</mat-hint>
           <mat-error>Campo Obrigatório</mat-error>
         </mat-form-field>
       </div>
