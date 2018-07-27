@@ -24,3 +24,20 @@ mat-spinner {
 .hide {
   display: none;
 }
+
+i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.instaled {
+  color: rgb(76, 175, 80);
+}
+
+.uninstall {
+  color: rgba(255, 0, 0, 0.63);
+}
+
+.edit {
+  color: rgba(49, 106, 230, 0.616);
+}

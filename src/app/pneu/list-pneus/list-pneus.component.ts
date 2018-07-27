@@ -10,7 +10,8 @@ import { PneuService } from './../../services/pneu.service';
   styleUrls: ['./list-pneus.component.css']
 })
 export class ListPneusComponent implements OnInit {
-  displayedColumns: string[] = ['dimension', 'brand', 'pr', 'type', 'number', 'registry', 'new', 'recachutado'];
+  displayedColumns: string[] = ['dimension', 'brand', 'pr', 'type', 'number',
+    'registry', 'new', 'recachutado', 'instaled', 'uninstall', 'edit'];
   dataSource = new MatTableDataSource();
   isLoading = false;
 

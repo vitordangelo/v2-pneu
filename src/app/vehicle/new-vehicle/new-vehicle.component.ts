@@ -22,7 +22,19 @@ export class NewVehicleComponent implements OnInit {
     this.newVehicleForm = new FormGroup({
       number_car: new FormControl('', {
         validators: [Validators.required]
-      })
+      }),
+      brand: new FormControl('', {
+        validators: [Validators.required]
+      }),
+      type: new FormControl('', {
+        validators: [Validators.required]
+      }),
+      year: new FormControl('', {
+        validators: [Validators.required]
+      }),
+      plate: new FormControl('', {
+        validators: [Validators.required]
+      }),
     });
   }
 

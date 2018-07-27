@@ -8,6 +8,7 @@ import { HistoryPneuComponent } from './history-pneu/history-pneu.component';
 import { ListPneusComponent } from './list-pneus/list-pneus.component';
 
 import { VehicleModule } from '../vehicle/vehicle.module';
+import { PneuInstaledComponent } from './pneu-instaled/pneu-instaled.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,6 @@ import { VehicleModule } from '../vehicle/vehicle.module';
     SharedModule,
     VehicleModule
   ],
-  declarations: [NewPneuComponent, HistoryPneuComponent, ListPneusComponent]
+  declarations: [NewPneuComponent, HistoryPneuComponent, ListPneusComponent, PneuInstaledComponent]
 })
 export class PneuModule { }

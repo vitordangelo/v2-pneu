@@ -10,7 +10,7 @@ import { VehicleService } from '../../services/vehicle.service';
   styleUrls: ['./list-vehicles.component.css']
 })
 export class ListVehiclesComponent implements OnInit {
-  displayedColumns: string[] = ['number_car'];
+  displayedColumns: string[] = ['number_car', 'brand', 'type', 'year', 'plate', 'edit'];
   dataSource = new MatTableDataSource();
   isLoading = false;
 

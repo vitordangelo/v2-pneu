@@ -5,3 +5,12 @@
 mat-spinner {
   margin-top: 15px;
 }
+
+i {
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.edit {
+  color: rgba(49, 106, 230, 0.616);
+}
