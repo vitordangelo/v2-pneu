@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { environment } from './../../environments/environment';
 
 import { Pneu } from './../modules/pneu';
+import { InstallUninstallPneu } from './../modules/install-uninstall-pneu';
 
 @Injectable({
   providedIn: 'root'
@@ -31,5 +32,9 @@ export class PneuService {
 
   update(id: number, pneu: Pneu): Observable<{}> {
     return this.httpClient.put<Pneu>(`${environment.apiUrl}pneu/${id}`, pneu);
+  }
+
+  istallUninstall(id: number, isInstaled: InstallUninstallPneu): Observable<{}> {
+    return this.httpClient.put<InstallUninstallPneu>(`${environment.apiUrl}pneu/install-uninstall/${id}`, isInstaled);
   }
 }

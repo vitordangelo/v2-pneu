@@ -49,7 +49,7 @@ export class ListPneusComponent implements OnInit {
   }
 
   onInstall(pneu: Pneu) {
-    console.log(pneu);
+    this.router.navigate(['pneu/install/', pneu.id]);
   }
 
   onUninstall(pneu: Pneu) {

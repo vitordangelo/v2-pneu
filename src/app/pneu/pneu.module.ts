@@ -8,7 +8,7 @@ import { HistoryPneuComponent } from './history-pneu/history-pneu.component';
 import { ListPneusComponent } from './list-pneus/list-pneus.component';
 
 import { VehicleModule } from '../vehicle/vehicle.module';
-import { PneuInstaledComponent } from './pneu-instaled/pneu-instaled.component';
+import { PneuInstaledComponent } from './pneu-install/pneu-install.component';
 
 @NgModule({
   imports: [
