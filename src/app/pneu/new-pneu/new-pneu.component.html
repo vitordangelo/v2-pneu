@@ -92,7 +92,8 @@
 
     </mat-card>
 
-    <button *ngIf="!isLoading" type="submit" mat-raised-button color="primary" [disabled]="newPneuForm.invalid">Submit</button>
+    <button *ngIf="!isUpdate" type="submit" mat-raised-button color="primary" [disabled]="newPneuForm.invalid">Salvar</button>
+    <a *ngIf="isUpdate" (click)="onUpdate(newPneuForm.value)" mat-raised-button color="primary" [disabled]="newPneuForm.invalid">Atualizar</a>
     <mat-spinner *ngIf="isLoading"></mat-spinner>
   </form>
 </section>

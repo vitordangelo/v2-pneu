@@ -12,42 +12,44 @@
   </mat-form-field>
 </div>
 
-<mat-table [dataSource]="dataSource" matSort>
-  <ng-container matColumnDef="number_car">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Número do Veículo</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.number_car }}</mat-cell>
-  </ng-container>
+<div class="mat-elevation-z8">
+  <mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="number_car">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Número do Veículo</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.number_car }}</mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="brand">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Marca</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.brand }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="brand">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Marca</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.brand }}</mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="type">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.type }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="type">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Tipo</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.type }}</mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="year">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Ano</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.year }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="year">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Ano</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.year }}</mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="plate">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Placa</mat-header-cell>
-    <mat-cell *matCellDef="let element">{{ element.plate }}</mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="plate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Placa</mat-header-cell>
+      <mat-cell *matCellDef="let element">{{ element.plate }}</mat-cell>
+    </ng-container>
 
-  <ng-container matColumnDef="edit">
-    <mat-header-cell *matHeaderCellDef mat-sort-header>Editar</mat-header-cell>
-    <mat-cell *matCellDef="let element">
-      <i class="fas fa-pencil-alt edit"></i>
-    </mat-cell>
-  </ng-container>
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Editar</mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <i class="fas fa-pencil-alt edit"></i>
+      </mat-cell>
+    </ng-container>
 
-  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-</mat-table>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
 
 <mat-paginator
   #paginator
