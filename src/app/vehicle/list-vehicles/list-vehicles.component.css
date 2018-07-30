@@ -14,3 +14,7 @@ i {
 .edit {
   color: rgba(49, 106, 230, 0.616);
 }
+
+.delete {
+  color: rgba(223, 20, 20, 0.301);
+}

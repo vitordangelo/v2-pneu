@@ -8,4 +8,5 @@ export interface Pneu {
   registry: string;
   new: boolean;
   recachutado: boolean;
+  is_installed: boolean;
 }

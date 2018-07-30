@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 import { VehicleService } from './../../services/vehicle.service';
 import { UiService } from '../../services/ui.service';
+import { Vehicle } from '../../modules/vehicle';
 
 @Component({
   selector: 'app-new-vehicle',
@@ -12,10 +14,13 @@ import { UiService } from '../../services/ui.service';
 export class NewVehicleComponent implements OnInit {
   newVehicleForm: FormGroup;
   isLoading = false;
+  isUpdate = false;
+  idVehicle: number;
 
   constructor(
     private vehicleService: VehicleService,
-    private uiService: UiService
+    private uiService: UiService,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -35,6 +40,21 @@ export class NewVehicleComponent implements OnInit {
       plate: new FormControl('', {
         validators: [Validators.required]
       }),
+    });
+
+    this.route.params.subscribe(params => {
+      const id = params['id'];
+      this.idVehicle = id;
+      if (id) {
+        this.isLoading = true;
+        this.isUpdate = true;
+        this.vehicleService.one(id)
+          .subscribe((vehicle: Vehicle) => {
+            delete vehicle.id;
+            this.newVehicleForm.setValue(vehicle);
+            this.isLoading = false;
+          });
+      }
     });
   }
 

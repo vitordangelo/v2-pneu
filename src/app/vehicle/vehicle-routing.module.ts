@@ -7,6 +7,7 @@ import { ListVehiclesComponent } from './list-vehicles/list-vehicles.component';
 
 const routes: Routes = [
   { path: '', component: NewVehicleComponent},
+  { path: 'edit-vehicle/:id', component: NewVehicleComponent},
   { path: 'pneus', component: PneusVehicleComponent},
   { path: 'list', component: ListVehiclesComponent},
 ];

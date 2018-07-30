@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { PneuService } from './../../services/pneu.service';
 import { UiService } from '../../services/ui.service';
@@ -56,6 +56,7 @@ export class NewPneuComponent implements OnInit {
         this.pneuService.one(id)
           .subscribe((pneu: Pneu) => {
             delete pneu.id;
+            delete pneu.is_installed;
             this.newPneuForm.setValue(pneu);
             this.isLoading = false;
           });

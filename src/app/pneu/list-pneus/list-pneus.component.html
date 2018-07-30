@@ -61,14 +61,22 @@
     <ng-container matColumnDef="instaled">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Instalar</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <i (click)="onInstall(element)" class="far fa-life-ring instaled"></i>
+        <i
+          (click)="onInstall(element)"
+          class="far fa-life-ring"
+          [ngClass]="element.is_installed ? 'hide' : 'instaled'">
+        </i>
       </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="uninstall">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Desistalar</mat-header-cell>
       <mat-cell *matCellDef="let element">
-        <i (click)="onUninstall(element)" class="far fa-life-ring uninstall"></i>
+        <i
+          (click)="onUninstall(element)"
+          class="far fa-life-ring"
+          [ngClass]="element.is_installed ? 'uninstall' : 'hide'">
+        </i>
       </mat-cell>
     </ng-container>
 
