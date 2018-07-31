@@ -33,7 +33,7 @@
         </mat-form-field>
 
         <mat-form-field fxFlex.gt-xs="calc(800px/3)">
-          <mat-select placeholder="Lado" formControlName="position">
+          <mat-select placeholder="Lado" formControlName="side">
             <mat-option value="Direito">
               Direito
             </mat-option>
@@ -44,7 +44,7 @@
         </mat-form-field>
 
         <mat-form-field fxFlex.gt-xs="calc(800px/3)">
-          <mat-select placeholder="Posição" formControlName="eixoDianteiro">
+          <mat-select placeholder="Posição" formControlName="position">
             <mat-option value="Eixo Interno">
               Eixo Interno
             </mat-option>
@@ -59,12 +59,21 @@
     <mat-card>
       <div fxLayout="row" fxFlex.gt-xs="800px" fxLayoutGap="10px" fxLayout.xs="column" fxLayoutAlign="center center">
         <mat-form-field fxFlex.gt-xs="calc(800px/3)">
-          <mat-select placeholder="Eixo" formControlName="eixoTrasiero">
+          <mat-select placeholder="Eixo" formControlName="eixo">
+            <mat-option value="1º Eixo Traseiro">
+              Dianteiro
+            </mat-option>
             <mat-option value="1º Eixo Traseiro">
               1º Eixo Traseiro
             </mat-option>
             <mat-option value="2º Eixo Traseiro">
               2º Eixo Traseiro
+            </mat-option>
+            <mat-option value="Estepe A">
+              Estepe A
+            </mat-option>
+            <mat-option value="Estepe B">
+              Estepe B
             </mat-option>
           </mat-select>
         </mat-form-field>
@@ -74,7 +83,7 @@
             type="text"
             matInput
             placeholder="Odômetro"
-            formControlName="odometerInstalled">
+            formControlName="odometer_instaled">
             <mat-hint>Odômetro</mat-hint>
             <mat-error>Campo Obrigatório</mat-error>
         </mat-form-field>

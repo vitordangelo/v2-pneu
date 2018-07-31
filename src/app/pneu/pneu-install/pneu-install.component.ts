@@ -5,7 +5,9 @@ import { ActivatedRoute } from '@angular/router';
 import { PneuService } from './../../services/pneu.service';
 import { VehicleService } from './../../services/vehicle.service';
 import { HistoryPneusService } from '../../services/history_pneus.service';
+import { InstallPneuService } from '../../services/install-pneu.service';
 import { UiService } from './../../services/ui.service';
+
 import { Vehicle } from '../../modules/vehicle';
 import { Pneu } from '../../modules/pneu';
 
@@ -19,13 +21,15 @@ export class PneuInstaledComponent implements OnInit {
   isLoading = false;
   vehicles: Vehicle[];
   pneu: Pneu;
+  idPneu: number;
 
   constructor(
     private pneuService: PneuService,
     private vehicleService: VehicleService,
     private historyPneusService: HistoryPneusService,
     private uiSerice: UiService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private installPneuSerice: InstallPneuService
   ) { }
 
   ngOnInit() {
@@ -33,16 +37,16 @@ export class PneuInstaledComponent implements OnInit {
       vehicle_id: new FormControl('', {
         validators: [Validators.required]
       }),
+      side: new FormControl('', {
+        validators: [Validators.required]
+      }),
       position: new FormControl('', {
         validators: [Validators.required]
       }),
-      eixoDianteiro: new FormControl('', {
+      eixo: new FormControl('', {
         validators: [Validators.required]
       }),
-      eixoTrasiero: new FormControl('', {
-        validators: [Validators.required]
-      }),
-      odometerInstalled: new FormControl('', {
+      odometer_instaled: new FormControl('', {
         validators: [Validators.required]
       }),
       obs: new FormControl('', {
@@ -62,6 +66,7 @@ export class PneuInstaledComponent implements OnInit {
 
       this.route.params.subscribe(params => {
         const id = params['id'];
+        this.idPneu = parseInt(id, 10);
         this.pneuService.one(id)
           .subscribe((pneu: Pneu) => {
             this.pneu = pneu;
@@ -72,7 +77,23 @@ export class PneuInstaledComponent implements OnInit {
   onSubmit() {
     const date = new Date(this.pneuInstaled.value.date);
     const dateFormated = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-    console.log({ ...this.pneuInstaled.value, date: dateFormated });
+
+    const pneuInstaled = {
+      ...this.pneuInstaled.value,
+      date: dateFormated,
+      pneu_id: this.idPneu
+    };
+
+    this.installPneuSerice.save(pneuInstaled)
+      .subscribe(res => {
+        console.log(res);
+        this.uiSerice.showSnackBar('Registro salvo com sucesso', 3000);
+      }, error => {
+        console.error(error);
+        this.uiSerice.showSnackBar('Erro, tente novamente mais tarde', 3000);
+      });
+
+    console.log(pneuInstaled);
 
     this.pneuService.istallUninstall(this.pneu.id, { is_installed: true })
       .subscribe(res => {

@@ -53,7 +53,26 @@ export class ListPneusComponent implements OnInit {
   }
 
   onUninstall(pneu: Pneu) {
-    console.log(pneu);
+    this.isLoading = true;
+    this.pneuService.istallUninstall(pneu.id, { is_installed: false })
+      .subscribe(res => {
+        console.log(res);
+        this.pneuService.all()
+          .subscribe((pneus: any) => {
+            this.pneus = pneus.pneus;
+            this.dataSource.data = pneus.pneus;
+            this.dataSource.sort = this.sort;
+            this.dataSource.paginator = this.paginator;
+            this.isLoading = false;
+            this.uiService.showSnackBar('Pneu desistalado com sucesso', 3000);
+      }, error => {
+        console.error(error);
+        this.uiService.showSnackBar('Ocorreu algum erro, tente mais tarde', 3000);
+      });
+      }, error => {
+        console.error(error);
+        this.uiService.showSnackBar('Ocorreu algum erro, tente mais tarde', 3000);
+      });
   }
 
   onDelete(pneu: Pneu) {
